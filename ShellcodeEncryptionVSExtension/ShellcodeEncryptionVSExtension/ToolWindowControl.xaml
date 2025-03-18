@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="ShellcodeEncryptionVSExtension.ToolWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Background="#2D2D30"
+             Foreground="White"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <TextBlock Grid.Row="0" 
+                   Text="Shellcode To Encrypt" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   HorizontalAlignment="Center" 
+                   Margin="0,10,0,5"/>
+
+        <!-- Entrada de Shellcode -->
+        <TextBox Grid.Row="1" 
+                 x:Name="ShellcodeTextBox" 
+                 Height="80" 
+                 Margin="10,5" 
+                 TextWrapping="Wrap" 
+                 AcceptsReturn="True"
+                 Background="#1E1E1E"
+                 Foreground="White"
+                 BorderBrush="#3F3F46"
+                 VerticalScrollBarVisibility="Auto"
+                 ToolTip="Ingresa el shellcode en formato hexadecimal (ej: \x31\xc0\x50\x68)"/>
+
+        <!-- Key (Clave) -->
+        <TextBlock Grid.Row="2" 
+                   Text="Key" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   HorizontalAlignment="Center" 
+                   Margin="0,10,0,5"/>
+
+        <TextBox Grid.Row="3" 
+                 x:Name="KeyTextBox" 
+                 Height="30" 
+                 Margin="10,5"
+                 Background="#1E1E1E"
+                 Foreground="White"
+                 BorderBrush="#3F3F46"
+                 ToolTip="Ingresa la clave para encriptar el shellcode"/>
+
+        <!-- Selección de método de encriptación -->
+        <TextBlock Grid.Row="4" 
+                   Text="Encryption Method" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   HorizontalAlignment="Center" 
+                   Margin="0,10,0,5"/>
+
+        <ComboBox Grid.Row="5" 
+                  x:Name="EncryptionMethodComboBox" 
+                  Margin="10,5"
+                  Background="#1E1E1E"
+                  Foreground="Black"
+                  BorderBrush="#3F3F46">
+            <ComboBoxItem Content="XOR" IsSelected="True"/>
+            <ComboBoxItem Content="AES"/>
+        </ComboBox>
+
+        <!-- Botón para encriptar -->
+        <Button Grid.Row="6" 
+                x:Name="EncryptButton" 
+                Content="Encrypt" 
+                Width="120" 
+                Height="40" 
+                Margin="0,10" 
+                HorizontalAlignment="Center"
+                Background="#FFA500"
+                Foreground="Black"
+                FontWeight="Bold"
+                Click="EncryptButton_Click"/>
+
+        <!-- Resultado en texto plano -->
+        <TextBlock Grid.Row="7" 
+                   Text="Plain Text Result" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   HorizontalAlignment="Center" 
+                   Margin="0,10,0,5"/>
+
+        <!-- Resultado en Hex -->
+        <TextBlock Grid.Row="9" 
+                   Text="Hex Result" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   HorizontalAlignment="Center" 
+                   Margin="0,10,0,5"/>
+
+        <TextBox Grid.Row="10" 
+                 x:Name="HexResultBox" 
+                 Margin="10,27,10,26" 
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 Background="#1E1E1E"
+                 Foreground="White"
+                 BorderBrush="#3F3F46"
+                 VerticalScrollBarVisibility="Auto"/>
+
+    </Grid>
+</UserControl>
