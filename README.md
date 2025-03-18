@@ -2,6 +2,9 @@
 
 A Visual Studio extension that provides a simple yet powerful interface for encrypting shellcode using XOR and AES encryption methods.
 
+![image](https://github.com/user-attachments/assets/c8162261-26f7-49a3-b362-843f8ee77afd)
+
+
 ## Features
 
 Encrypt shellcode using XOR or AES encryption algorithms
@@ -22,6 +25,8 @@ Open Visual Studio
 Go to Extensions > Manage Extensions
 
 Search for "ShellcodeEncryptionVSExtension"
+
+Or: [https://marketplace.visualstudio.com/items?itemName=0x12DarkDevelopment.shellcodeEncryption](https://marketplace.visualstudio.com/items?itemName=0x12DarkDevelopment.shellcodeEncryption)
 
 Click Download and follow the installation instructions
 
